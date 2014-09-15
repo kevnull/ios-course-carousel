@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		887CD09719C6DF1800A86BB2 /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887CD09619C6DF1800A86BB2 /* signInViewController.swift */; };
 		88DA358C19BFCD6F00BE3E90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA358B19BFCD6F00BE3E90 /* AppDelegate.swift */; };
 		88DA358E19BFCD6F00BE3E90 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88DA358D19BFCD6F00BE3E90 /* ViewController.swift */; };
 		88DA359119BFCD6F00BE3E90 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88DA358F19BFCD6F00BE3E90 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		887CD09619C6DF1800A86BB2 /* signInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		88DA358619BFCD6F00BE3E90 /* ios-course-carousel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-course-carousel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88DA358A19BFCD6F00BE3E90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		88DA358B19BFCD6F00BE3E90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				88DA358B19BFCD6F00BE3E90 /* AppDelegate.swift */,
 				88DA358D19BFCD6F00BE3E90 /* ViewController.swift */,
 				88DA358F19BFCD6F00BE3E90 /* Main.storyboard */,
+				887CD09619C6DF1800A86BB2 /* signInViewController.swift */,
 				88DA35AB19BFD15800BE3E90 /* IntroViewController.swift */,
 				88DA359219BFCD6F00BE3E90 /* Images.xcassets */,
 				88DA359419BFCD6F00BE3E90 /* LaunchScreen.xib */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				887CD09719C6DF1800A86BB2 /* signInViewController.swift in Sources */,
 				88DA35AC19BFD15800BE3E90 /* IntroViewController.swift in Sources */,
 				88DA358E19BFCD6F00BE3E90 /* ViewController.swift in Sources */,
 				88DA358C19BFCD6F00BE3E90 /* AppDelegate.swift in Sources */,
@@ -409,6 +413,7 @@
 				88DA35A719BFCD6F00BE3E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		88DA35A819BFCD6F00BE3E90 /* Build configuration list for PBXNativeTarget "ios-course-carouselTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				88DA35AA19BFCD6F00BE3E90 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
