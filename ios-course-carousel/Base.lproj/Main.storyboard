@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
     <scenes>
         <!--Intro View Controller-->
@@ -20,7 +20,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="1793"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile1" id="jGM-Dq-xli">
+                                    <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile1" id="jGM-Dq-xli">
                                         <rect key="frame" x="53" y="742" width="147" height="147"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -55,6 +55,11 @@
                         <outlet property="introImage" destination="xh5-jI-rqL" id="TvE-yq-tYs"/>
                         <outlet property="scrollView" destination="RxU-7K-y8P" id="JZ3-hQ-prw"/>
                         <outlet property="tile1Image" destination="jGM-Dq-xli" id="jjb-u8-IH4"/>
+                        <outlet property="tile2Image" destination="MjM-T1-kKd" id="vxH-gz-ADH"/>
+                        <outlet property="tile3Image" destination="Vqe-T5-ulW" id="wpZ-GO-4lF"/>
+                        <outlet property="tile4Image" destination="2hz-6G-uz8" id="qIB-dr-qny"/>
+                        <outlet property="tile5Image" destination="9CM-CC-1Xn" id="5Qa-gG-idp"/>
+                        <outlet property="tile6Image" destination="EZY-83-OGm" id="XyP-DA-iMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -74,6 +79,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>
