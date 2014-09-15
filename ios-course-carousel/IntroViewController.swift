@@ -71,7 +71,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         for var i = 0; i < imageViewArray.count; ++i {
             currImageView = imageViewArray[i]
             tilePosition = getTilePosition(i, offset: offset)
-            println("\(i): \(tilePosition)")
+
             currImageView.transform = CGAffineTransformMakeTranslation(tilePosition.x, tilePosition.y)
             currImageView.transform = CGAffineTransformScale(currImageView.transform, tilePosition.s, tilePosition.s)
             currImageView.transform = CGAffineTransformRotate(currImageView.transform, tilePosition.r)
