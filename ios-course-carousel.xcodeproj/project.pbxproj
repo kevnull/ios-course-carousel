@@ -72,7 +72,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		88167B5119C711DC001B3235 /* Controllers */ = {
+		88167B5119C711DC001B3235 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				88DA358D19BFCD6F00BE3E90 /* ViewController.swift */,
@@ -84,7 +84,7 @@
 				887CD09619C6DF1800A86BB2 /* signInViewController.swift */,
 				88DA35AB19BFD15800BE3E90 /* IntroViewController.swift */,
 			);
-			name = Controllers;
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		88DA357D19BFCD6F00BE3E90 = {
@@ -111,7 +111,7 @@
 			children = (
 				88DA358B19BFCD6F00BE3E90 /* AppDelegate.swift */,
 				88DA358F19BFCD6F00BE3E90 /* Main.storyboard */,
-				88167B5119C711DC001B3235 /* Controllers */,
+				88167B5119C711DC001B3235 /* View Controllers */,
 				88DA359219BFCD6F00BE3E90 /* Images.xcassets */,
 				88DA359419BFCD6F00BE3E90 /* LaunchScreen.xib */,
 				88DA358919BFCD6F00BE3E90 /* Supporting Files */,

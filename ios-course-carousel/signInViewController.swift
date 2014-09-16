@@ -15,7 +15,6 @@ class signInViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
 
-    @IBOutlet weak var signInStatus: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func backButton(sender: AnyObject) {

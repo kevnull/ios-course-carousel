@@ -11,30 +11,51 @@ import UIKit
 class tourViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var imageView: UIImageView!
     
+    var pageControlIsChanging : Bool = false
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
-        // Get the current page based on the scroll offset
-        var page : Int = Int(round(scrollView.contentOffset.x / 320))
-        println("got here")
-        // Set the current page, so the dots will update
-        pageControl.currentPage = page
+        pageControlIsChanging = false
+
+
     }
 
-    func scrollViewDidScroll(scrollView: UIScrollView) {
-        println("yo")
+    func scrollViewDidScroll(_scrollView: UIScrollView) {
+        if (pageControlIsChanging) {
+            return
+        }
+
+        // Get the current page based on the scroll offset
+//        var page : Int = Int((round(scrollView.contentOffset.x - 200 / 2)/200)+1)
+//        
+//        println("\(scrollView.contentOffset.x) page \(page)")
+//        // Set the current page, so the dots will update
+//        pageControl.currentPage = page
     }
     
+//    @IBAction func changePage(sender: AnyObject) {
+//        var frame : CGRect = scrollView.frame
+//        frame.origin.x = frame.size.width * CGFloat(pageControl.currentPage)
+//        println("here")
+//        frame.origin.y = 0
+//        
+//        scrollView.scrollRectToVisible(frame, animated: true)
+//        pageControlIsChanging = true
+//    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: 2240, height: imageView.frame.height)
-        println(imageView.frame.size)
+
+
         // Do any additional setup after loading the view.
-        pageControl.currentPage = 1
+//        pageControl.numberOfPages = 4
+//        pageControl.currentPage = 1
+
+        scrollView.contentSize = CGSizeMake(1280, imageView.frame.height)
+
     }
 
     override func didReceiveMemoryWarning() {
