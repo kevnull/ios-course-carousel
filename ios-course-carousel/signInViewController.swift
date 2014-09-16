@@ -15,6 +15,8 @@ class signInViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
 
+    @IBOutlet weak var loginForm: UIImageView!
+    @IBOutlet weak var instructionsText: UIImageView!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBAction func backButton(sender: AnyObject) {
@@ -59,9 +61,6 @@ class signInViewController: UIViewController {
         }
 
     }
-    @IBAction func clearKeyButton(sender: AnyObject) {
-
-    }
     @IBAction func keyboardDismiss(sender: AnyObject) {
         view.endEditing(true)
     }
@@ -75,10 +74,14 @@ class signInViewController: UIViewController {
         var animationDuration = durationValue.doubleValue
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
         var animationCurve = curveValue.integerValue
-        
+        println(animationCurve)
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
             self.signinButton.frame.origin.y = 455 - kbSize.height
             self.forgotButton.frame.origin.y = 510 - kbSize.height
+            self.loginForm.frame.origin.y = 125 - self.instructionsText.frame.size.height
+            self.emailText.frame.origin.y = 145 - self.instructionsText.frame.size.height
+            self.passwordText.frame.origin.y = 189 - self.instructionsText.frame.size.height
+            self.instructionsText.frame.origin.y = 55 - self.instructionsText.frame.size.height
             // Set view properties in here that you want to match with the animation of the keyboard
             // If you need it, you can use the kbSize property above to get the keyboard width and height.
             }, completion: nil)
@@ -95,10 +98,17 @@ class signInViewController: UIViewController {
         var curveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as NSNumber
         var animationCurve = curveValue.integerValue
         
+        
+        /// TODO: Programmatically store all initial positions to be restored to at any point with a restore function
         UIView.animateWithDuration(animationDuration, delay: 0.0, options: UIViewAnimationOptions.fromRaw(UInt(animationCurve << 16))!, animations: {
             self.signinButton.frame.origin.y = 455
-            
             self.forgotButton.frame.origin.y = 510
+            self.loginForm.frame.origin.y = 125
+            self.emailText.frame.origin.y = 145
+            self.passwordText.frame.origin.y = 189
+            self.instructionsText.frame.origin.y = 55
+
+            
             // Set view properties in here that you want to match with the animation of the keyboard
             // If you need it, you can use the kbSize property above to get the keyboard width and height.
             }, completion: nil)
@@ -112,6 +122,7 @@ class signInViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
         // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {

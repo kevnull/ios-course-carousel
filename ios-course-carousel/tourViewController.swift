@@ -10,52 +10,61 @@ import UIKit
 
 class tourViewController: UIViewController, UIScrollViewDelegate {
 
+    let PAGE_WIDTH = 320
+    let NUM_PAGES = 4
+    var lastPage : Bool = false
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var backupButton: UIButton!
+    @IBOutlet weak var backupSwitch: UISwitch!
+    @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var imageView: UIImageView!
     
-    var pageControlIsChanging : Bool = false
-    
     func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
-        pageControlIsChanging = false
-
-
+        // Get the current page based on the scroll offset
+        var page : Int = Int((round(scrollView.contentOffset.x - CGFloat(PAGE_WIDTH) / 2)/CGFloat(PAGE_WIDTH))+1)
+        
+        // Set the current page, so the dots will update
+        pageControl.currentPage = page
+        
+        if (page == NUM_PAGES-1) {
+            UIView.animateWithDuration(0.5, delay: 0.0, options: nil, animations: {
+                self.backupButton.alpha = 1
+                self.backupSwitch.alpha = 1
+                self.pageControl.alpha = 0
+            }, completion: nil)
+            lastPage = true
+        }
+        
+        if (lastPage && page < NUM_PAGES-1) {
+            UIView.animateWithDuration(0.5, delay: 0.0, options: nil, animations: {
+                self.backupButton.alpha = 0
+                self.backupSwitch.alpha = 0
+                self.pageControl.alpha = 1
+                }, completion: nil)
+            lastPage = false
+        }
     }
 
     func scrollViewDidScroll(_scrollView: UIScrollView) {
-        if (pageControlIsChanging) {
-            return
-        }
-
-        // Get the current page based on the scroll offset
-//        var page : Int = Int((round(scrollView.contentOffset.x - 200 / 2)/200)+1)
-//        
-//        println("\(scrollView.contentOffset.x) page \(page)")
-//        // Set the current page, so the dots will update
-//        pageControl.currentPage = page
     }
     
-//    @IBAction func changePage(sender: AnyObject) {
-//        var frame : CGRect = scrollView.frame
-//        frame.origin.x = frame.size.width * CGFloat(pageControl.currentPage)
-//        println("here")
-//        frame.origin.y = 0
-//        
-//        scrollView.scrollRectToVisible(frame, animated: true)
-//        pageControlIsChanging = true
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        self.backupButton.alpha = 0
+        self.backupSwitch.alpha = 0
+        self.backupButton.frame.origin.x += CGFloat((NUM_PAGES-1)*PAGE_WIDTH)
+        self.backupSwitch.frame.origin.x += CGFloat((NUM_PAGES-1)*PAGE_WIDTH)
 
 
         // Do any additional setup after loading the view.
-//        pageControl.numberOfPages = 4
-//        pageControl.currentPage = 1
+        pageControl.numberOfPages = NUM_PAGES
+        pageControl.currentPage = 0
 
-        scrollView.contentSize = CGSizeMake(1280, imageView.frame.height)
-
+        scrollView.frame = CGRect(x: 0, y: 0, width: imageView.frame.width, height: imageView.frame.height)
+        scrollView.contentSize = CGSizeMake(CGFloat(NUM_PAGES*PAGE_WIDTH), imageView.frame.height)
     }
 
     override func didReceiveMemoryWarning() {

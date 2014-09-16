@@ -17,7 +17,6 @@ class timelineViewController: UIViewController, UIScrollViewDelegate {
 
         scrollView.delegate = self
         scrollView.contentSize = timelineImage.image!.size
-        scrollView.contentOffset.y = -44
         // Do any additional setup after loading the view.
     }
 

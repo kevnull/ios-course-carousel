@@ -1,5 +1,5 @@
 //
-//  createViewController.swift
+//  termsViewController.swift
 //  ios-course-carousel
 //
 //  Created by Kevin Cheng on 9/15/14.
@@ -8,17 +8,22 @@
 
 import UIKit
 
-class createViewController: UIViewController {
+class termsViewController: UIViewController {
 
+    @IBAction func dismissButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+        
+    }
+    @IBOutlet weak var webView: UIWebView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        var url = "https://www.dropbox.com/terms"
+        var fullUrl : NSURL = NSURL.URLWithString(url)
+        var requestObj : NSURLRequest = NSURLRequest (URL: fullUrl)
+        webView.loadRequest(requestObj)
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func dismissButton(sender: AnyObject) {
-        navigationController?.popToRootViewControllerAnimated(true)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
