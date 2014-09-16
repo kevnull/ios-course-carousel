@@ -27,6 +27,10 @@ Approximately 10 hours
 
 # Optional / Additional
 
+* *Parse Integration*
+   * Creates actual account against Parse db
+   * Sign in checks against Parse
+   * Gif above was recorded before Parse integration
 * Intro
    * Tiles animate with scroll
    * Refactored code to dynamically cycle through image views of tiles
