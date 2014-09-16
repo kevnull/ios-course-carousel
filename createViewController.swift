@@ -31,6 +31,22 @@ class createViewController: UIViewController {
             dispatch_get_main_queue(), closure)
     }
     
+    func signUp(name : String, email : String, password : String) {
+        var user = PFUser()
+        user.username = email
+        user.password = password
+        user.email = email
+        
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool!, error: NSError!) -> Void in
+            if error == nil {
+                // Hooray! Let them use the app now.
+            } else {
+                // Show the errorString somewhere and let the user try again.
+            }
+        }
+    }
+    
     func checkSignUp () {
         var alertView : UIAlertView
         
@@ -57,6 +73,7 @@ class createViewController: UIViewController {
                 alertView.show()
             delay(2) {
                 alertView.dismissWithClickedButtonIndex(0, animated: true)
+                self.signUp(self.nameText.text, email: self.emailText.text, password: self.passwordText.text)
                 self.performSegueWithIdentifier("signupSegue", sender: self)
             }
         }

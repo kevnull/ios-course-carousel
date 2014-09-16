@@ -35,20 +35,22 @@ class signInViewController: UIViewController {
     func checkPassword () {
         var alertView : UIAlertView
         
-        if (self.emailText.text == "kc@kevnull.com" && self.passwordText.text == "password") { performSegueWithIdentifier("loginSegue", sender: self)
-        }
-        else if (self.emailText.text.isEmpty) {
+        if (self.emailText.text.isEmpty) {
             alertView = UIAlertView(title: "No Email", message: "Email address is required", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
         }
         else if (self.passwordText.text.isEmpty) {
             alertView = UIAlertView(title: "No Password", message: "Password is required", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
-        }
-        else {
-            alertView = UIAlertView(title: "Incorrect Login", message: "Couldn't find a valid email/password", delegate: self, cancelButtonTitle: "OK")
-            alertView.show()
-            
+        } else {
+            PFUser.logInWithUsernameInBackground(self.emailText.text, password:self.passwordText.text) {
+                (user: PFUser!, error: NSError!) -> Void in
+                if user != nil {
+                    self.performSegueWithIdentifier("loginSegue", sender: self)
+                } else {
+                    UIAlertView(title: "Incorrect Login", message: "Couldn't find a valid email/password", delegate: self, cancelButtonTitle: "OK").show()
+                }
+            }
         }
     }
     @IBAction func signInButton(sender: AnyObject) {
