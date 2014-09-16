@@ -27,7 +27,7 @@ Approximately 10 hours
 
 # Optional / Additional
 
-* _Parse Integration_
+* **Parse Integration**
    * Creates actual account against Parse db
    * Sign in checks against Parse
    * Gif above was recorded before Parse integration
