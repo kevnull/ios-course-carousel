@@ -355,7 +355,7 @@
                         <outlet property="passwordText" destination="M9G-QL-CsL" id="vt8-JO-Jzm"/>
                         <outlet property="scrollView" destination="Rs6-4n-0Zq" id="RLv-R7-rLF"/>
                         <outlet property="signinButton" destination="Dgt-wG-a5O" id="aJO-dS-wiF"/>
-                        <segue destination="fEa-Sc-rUz" kind="push" identifier="loginSegue" id="AkJ-Mf-Vmv"/>
+                        <segue destination="fEa-Sc-rUz" kind="modal" identifier="loginSegue" modalTransitionStyle="coverVertical" id="AkJ-Mf-Vmv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xui-31-YQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
